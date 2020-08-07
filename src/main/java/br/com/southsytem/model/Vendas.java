@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Vendas {
-    private String saleId;
+    private Integer saleId;
     private List<Item> itens = new ArrayList<>();
     private String listItens;
     private String salesManName;
