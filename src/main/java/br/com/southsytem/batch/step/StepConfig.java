@@ -5,11 +5,11 @@
  */
 package br.com.southsytem.batch.step;
 
-import br.com.southsytem.batch.reader.CustomVendasReader;
+import br.com.southsytem.model.ModelWriter;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.MultiResourceItemReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +25,7 @@ public class StepConfig {
     public StepBuilderFactory stepBuilderFactory;
 
     @Bean
-    public Step leituraArquivoLarguraFixaStep(MultiResourceItemReader<Object> multipleReader,
+    public Step leituraArquivoLarguraFixaStep(MultiResourceItemReader multipleReader,
                                               ItemWriter leituraArquivoMultiplosFormatosItemWriter) {
         return stepBuilderFactory
                 .get("leituraArquivoLarguraFixaStep")

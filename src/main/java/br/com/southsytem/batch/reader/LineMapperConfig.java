@@ -16,6 +16,7 @@ import java.util.Map;
 
 @Configuration
 public class LineMapperConfig {
+
     @Bean
     public PatternMatchingCompositeLineMapper lineMapper(){
         PatternMatchingCompositeLineMapper lineMapper = new PatternMatchingCompositeLineMapper();

@@ -10,9 +10,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Item {
-    private String id;
-    private String quatity;
-    private String price;
+    private Integer id;
+    private Integer quatity;
+    private Double price;
 
     @Override
     public String toString() {

@@ -5,6 +5,7 @@
  */
 package br.com.southsytem.batch.job;
 
+import br.com.southsytem.batch.listener.ListenerConfig;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -25,11 +26,12 @@ public class JobConfig {
     public JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public Job arquivoLarguraFixaJob(Step leituraArquivoLarguraFixaStep) {
+    public Job arquivoLarguraFixaJob(ListenerConfig listenerConfig, Step leituraArquivoLarguraFixaStep) {
         return jobBuilderFactory
                 .get("arquivoLarguraFixaJob")
                 .start(leituraArquivoLarguraFixaStep)
                 .incrementer(new RunIdIncrementer())
+                .listener(listenerConfig)
                 .build();
     }
 }
