@@ -10,7 +10,6 @@ public class ListenerConfig extends JobExecutionListenerSupport {
 
     @Override
     public void afterJob(JobExecution jobExecution) {
-        if(jobExecution.getStatus() == BatchStatus.COMPLETED)
-            System.out.println("Ok *************************************");
+
     }
 }

@@ -52,14 +52,11 @@ public class WriterConfig {
     }
 
     private FlatFileHeaderCallback header() {
-        return new FlatFileHeaderCallback() {
-            @Override
-            public void writeHeader(Writer writer) throws IOException {
-                writer.append(String.format("\t\t\t\t Desenvolvedor: Guilherme Costa\n"));
-                writer.append(String.format("\t\t\t\t E-mail: tfguilherme.costa@gmail.com\n"));
-                writer.append(String.format("\t\t\t\t Linkedin: in/guilherme-scosta\n"));
-                writer.append(String.format("\t\t\t\t Github: https://github.com/meianoiteeum\n"));
-            }
+        return writer -> {
+            writer.append(String.format("\t\t\t\t Desenvolvedor: Guilherme Costa\n"));
+            writer.append(String.format("\t\t\t\t E-mail: tfguilherme.costa@gmail.com\n"));
+            writer.append(String.format("\t\t\t\t Linkedin: in/guilherme-scosta\n"));
+            writer.append(String.format("\t\t\t\t Github: https://github.com/meianoiteeum\n"));
         };
     }
 
@@ -75,14 +72,6 @@ public class WriterConfig {
     }
 
     private ResourceSuffixCreator suffixCreator() {
-        return new ResourceSuffixCreator() {
-            @Override
-            public String getSuffix(int index) {
-                return index + ".done.dat";
-            }
-        };
+        return index -> index + ".done.dat";
     }
-//    public ItemWriter leituraArquivoLarguraFixaWriter() {
-//        return items -> items.forEach(System.out::println);
-//    }
 }

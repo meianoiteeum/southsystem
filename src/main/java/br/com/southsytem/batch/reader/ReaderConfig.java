@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 
 /**
  *
@@ -24,6 +23,9 @@ import org.springframework.core.io.Resource;
 @Configuration
 public class ReaderConfig {
 
+    @Value("${HOMEPATHIN}")
+    private String dataIn;
+
     @StepScope
     @Bean
     public FlatFileItemReader leituraArquivoLarguraFixaReader(
@@ -31,7 +33,7 @@ public class ReaderConfig {
         return new FlatFileItemReaderBuilder<Cliente>()
                 .name("leituraArquivoLarguraFixaReader")
                 .encoding("utf-8")
-                .resource(new ClassPathResource("%homepath%/data/in"))
+                .resource(new ClassPathResource(dataIn))
                 .lineMapper(lineMapper)
                 .build();
     }
