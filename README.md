@@ -25,7 +25,7 @@ Os dados do cliente têm o formato id 002 e a linha terá o seguinte formato:
 002çCNPJçNameçBusiness Area
 
 * Dados de vendas
-Os dados de vendas têm o formato id 003. Dentro da linha de vendas, existe a lista de itens, que é envolto por colchetes [].
+Os dados de vendas têm o formato id 003. Dentro da linha de vendas, existe a lista de itens, que é envolto por colchetes.
 A linha terá o seguinte formato: 
 003çSaleIDç[Item ID-Item Quantity-Item Price]çSalesman name
 
