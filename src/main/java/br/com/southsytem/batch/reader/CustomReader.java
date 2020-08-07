@@ -31,7 +31,7 @@ public class CustomReader implements ItemStreamReader<ModelWriter>, ResourceAwar
         if(objAtual == null)
             objAtual = delegate.read();
 
-        ModelWriter modelWriter = null;
+        ModelWriter modelWriter;
         List<Cliente> clientes = new ArrayList<>();
         List<Vendas> vendas = new ArrayList<>();
         List<Vendedor> vendedores = new ArrayList<>();
